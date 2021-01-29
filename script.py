@@ -15,22 +15,21 @@ random.shuffle(videos)
 # How many times the video on the list will be played?
 play = 10
 
-# How many times the shuffled video list will be played (change the value inside range parenthesis.
-# ex. range(<how many times>)
+# Loop how many times the shuffled videos list.
 for _ in range(play):
     # process all the video on the list.
     for video in videos:
         # load browser driver.
-        # note: you may use mozilla or any webdriver.
+        # note: you may use mozilla or any webdriver in this example we used chrome driver.
         driver = webdriver.Chrome("<path to chrome driver>")
 
-        # go to page url
+        # go to selected video
         driver.get("https://www.youtube.com/watch?v=" + video)
 
-        # Switch to youtube video section
+        # Switch to youtube video iframe section
         driver.switch_to.frame(0)
 
-        # random from 3 - 6 secs on when the play button will execute
+        # Random from 3 - 6 secs on when the play button will execute (optional)
         wait_to_play = random.randint(3, 6)
         time.sleep(wait_to_play)
 
@@ -43,8 +42,7 @@ for _ in range(play):
         # Switch to main frame.
         driver.switch_to.parent_frame()
 
-        # Obtain the length of the youtube video
-        # duration = driver.find_element_by_xpath("//span[@class='ytp-time-duration']").text
+        # Obtain the length of the video
         eDuration = WebDriverWait(driver, 20).until(
             EC.element_to_be_clickable((By.XPATH, "//span[@class='ytp-time-duration']")))
         duration = eDuration.text
