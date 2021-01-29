@@ -5,3 +5,6 @@ Download and install the latest and stable version here: https://www.python.org/
 
 Install selnium using python command:
 python -m pip install selenium
+
+run the script!
+python <path to script.py>
