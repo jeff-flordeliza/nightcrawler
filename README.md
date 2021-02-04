@@ -1,6 +1,5 @@
 # Project Nightcrawler
-Play random youtube channel videos Using Python, Selenium and Amazon DynamoDB
-
+Play random youtube channel videos Using Python and Selenium
 Download and install the latest and stable version here: https://www.python.org/downloads/
 
 Install selnium using python command:
